@@ -1,15 +1,15 @@
 Below are the Big O performance of common functions of different Java Collections.
 
 
-List                 | Add  | Remove | Get  | Contains | Next | Data Structure
----------------------|------|--------|------|----------|------|---------------
-ArrayList            | O(1) |  O(n)  | O(1) |   O(n)   | O(1) | Array
-LinkedList           | O(1) |  O(1)  | O(n) |   O(n)   | O(1) | Linked List
+List                 | Add  | Remove | Get  | Contains | Next | Data Structure           Notes
+---------------------|------|--------|------|----------|------|---------------------------------
+ArrayList            | O(1) |  O(n)  | O(1) |   O(n)   | O(1) | Array                    Good for accessing an element
+LinkedList           | O(1) |  O(1)  | O(n) |   O(n)   | O(1) | Linked List              Good for dynamic insert/del operations 
 CopyOnWriteArrayList | O(n) |  O(n)  | O(1) |   O(n)   | O(1) | Array
 
 
 
-Set                   |    Add   |  Remove  | Contains |   Next   | Size | Data Structure
+Set                   |    Add   |  Remove  | Contains |   Next   | Size | Data Structure               Notes(Duplicates not allowed same as map alt)
 ----------------------|----------|----------|----------|----------|------|-------------------------
 HashSet               | O(1)     | O(1)     | O(1)     | O(h/n)   | O(1) | Hash Table
 LinkedHashSet         | O(1)     | O(1)     | O(1)     | O(1)     | O(1) | Hash Table + Linked List
@@ -20,11 +20,11 @@ ConcurrentSkipListSet | O(log n) | O(log n) | O(log n) | O(1)     | O(n) | Skip 
 
 
 
-Queue                   |  Offer   | Peak |   Poll   | Remove | Size | Data Structure
-------------------------|----------|------|----------|--------|------|---------------
-PriorityQueue           | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap
+Queue                   |  Offer   | Peak |   Poll   | Remove | Size | Data Structure               Notes
+------------------------|----------|------|----------|--------|------|-----------------------------------------
+PriorityQueue           | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap             Retrieves smallest/largest element everytime
 LinkedList              | O(1)     | O(1) | O(1)     |  O(1)  | O(1) | Array
-ArrayDequeue            | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Linked List
+ArrayDequeue            | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Linked List               Good for insert/del both sides alt for stack & queue.
 ConcurrentLinkedQueue   | O(1)     | O(1) | O(1)     |  O(n)  | O(n) | Linked List
 ArrayBlockingQueue      | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Array
 PriorirityBlockingQueue | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap
@@ -34,13 +34,13 @@ LinkedBlockingQueue     | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Linked Li
 
 
 
-Map                   |   Get    | ContainsKey |   Next   | Data Structure
-----------------------|----------|-------------|----------|-------------------------
-HashMap               | O(1)     |   O(1)      | O(h / n) | Hash Table
-LinkedHashMap         | O(1)     |   O(1)      | O(1)     | Hash Table + Linked List
+Map                   |   Get    | ContainsKey |   Next   | Data Structure                     Notes(K,V paris one null key allowed)
+----------------------|----------|-------------|----------|-------------------------------------------------------------
+HashMap               | O(1)     |   O(1)      | O(h / n) | Hash Table                      No insertion order maintained, faster
+LinkedHashMap         | O(1)     |   O(1)      | O(1)     | Hash Table + Linked List        Insertion order maintained
 IdentityHashMap       | O(1)     |   O(1)      | O(h / n) | Array
 WeakHashMap           | O(1)     |   O(1)      | O(h / n) | Hash Table
 EnumMap               | O(1)     |   O(1)      | O(1)     | Array
-TreeMap               | O(log n) |   O(log n)  | O(log n) | Red-black tree
+TreeMap               | O(log n) |   O(log n)  | O(log n) | Red-black tree                  Ascending order maintained
 ConcurrentHashMap     | O(1)     |   O(1)      | O(h / n) | Hash Tables
 ConcurrentSkipListMap | O(log n) |   O(log n)  | O(1)     | Skip List
